@@ -18,25 +18,24 @@ class Account:
     @money.setter
     def money(self,qnt):
         if qnt<=0:
-            self.log.add_entrie(f'Tentou adicionar: R${qnt}')
+            self.log.try_deposit()
         self._money= qnt
         
     def deposit(self,qnt:float):
         self.money+=qnt
-        self._log_transitions('Depósito:R$',qnt)
+        self.log.deposit(qnt)
         
     def withdraw(self,qnt:float):
         if qnt>self._money:
             self.log.add_entrie(ValueError('Saldo insuficiente para saque!'))
         self.money-=qnt
-        self._log_transitions('Saque:R$',qnt)
+        self.log.withdraw(qnt)
         
     def see_money(self)->float:
-        self.log.add_entrie('Viu o saldo da conta!')
+        self.log.see_money()
         return self._money
     
-    def _log_transitions(self,transition:str,qnt:float):
-        self.log.add_entrie(f"{transition} {qnt:.2f}")
+    
     
 if __name__ == '__main__':
     gabriel_account = Account('Gabriel')

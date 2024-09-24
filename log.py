@@ -19,14 +19,17 @@ class Log:
                 file.write(f'{item}\n')
             self.entry.clear()
         
-    def log_deposit(self,cash:int):
-        self.entry.append('Depósito: R$',cash)
+    def deposit(self,cash:int):
+        self.entry.append(f'Depósito: R${cash}')
         
-    def log_withdraw(self,cash:int):
-        self.entry.append('Saque: R$',cash)
+    def withdraw(self,cash:int):
+        self.entry.append(f'Saque: R${cash}')
         
-    def log_see_money(self):
+    def see_money(self):
         self.entry.append('Viu o saldo da conta corrente!')
+        
+    def try_deposit(self):
+        self.entry.append('Tentou adicionar saldo negativo na conta!')
         
     
         
