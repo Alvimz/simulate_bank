@@ -1,4 +1,0 @@
---Transações--Depositou R$30
-Saldo insuficiente!
-Tentou adicionar{qnt}
-viu o saldo da conta!
