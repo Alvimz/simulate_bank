@@ -18,6 +18,18 @@ class Log:
             for item in self.entry:
                 file.write(f'{item}\n')
             self.entry.clear()
+        
+    def log_deposit(self,cash:int):
+        self.entry.append('Depósito: R$',cash)
+        
+    def log_withdraw(self,cash:int):
+        self.entry.append('Saque: R$',cash)
+        
+    def log_see_money(self):
+        self.entry.append('Viu o saldo da conta corrente!')
+        
+    
+        
             
 if __name__ == '__main__':
     ...
