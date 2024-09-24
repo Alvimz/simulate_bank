@@ -26,14 +26,14 @@ class Account:
             raise ValueError('Saldo insuficiente para resgate!')
         self.money-=qnt
         
-    def saw_money(self)->float:
+    def see_money(self)->float:
         return self._money
     
 if __name__ == '__main__':
     gabriel_account = Account('Gabriel')
     gabriel_account.deposit(30)
     gabriel_account.withdraw(35)
-    print(gabriel_account.saw_money())
+    print(gabriel_account.see_money())
  
    
     
