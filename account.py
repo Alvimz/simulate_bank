@@ -18,19 +18,19 @@ class Account:
     @money.setter
     def money(self,qnt):
         if qnt<=0:
-            self.log.add_entrie('Tentou adicionar{qnt}')
+            self.log.add_entrie(f'Tentou adicionar: R${qnt}')
 
-            raise ValueError('Não pode ser um valor negativo!')
+            #raise ValueError('Não pode ser um valor negativo!')
         self._money= qnt
         
     def deposit(self,qnt:float):
         self.money+=qnt
-        self.log.add_entrie(f'Depositou R${qnt}')
+        self.log.add_entrie(f'Depositou: R${qnt}')
         
     def withdraw(self,qnt:float):
         if qnt>self._money:
             self.log.add_entrie(ValueError('Saldo insuficiente!'))
-            raise ValueError('Saldo insuficiente para resgate!')
+            #raise ValueError('Saldo insuficiente para resgate!')
         self.money-=qnt
         
     def see_money(self)->float:
@@ -42,6 +42,7 @@ if __name__ == '__main__':
     gabriel_account.deposit(30)
     gabriel_account.withdraw(35)
     print(gabriel_account.see_money())
+    gabriel_account.log.save_file()
  
    
     

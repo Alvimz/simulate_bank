@@ -7,7 +7,7 @@ class Log:
     def create_file_log(self): 
         if not os.path.exists(self.filename):
             with open(self.filename,'w',encoding='utf-8') as file:
-                file.write(f'--Transações--')
+                file.write('--Transações--')
              
     def add_entrie(self,entry:str):
         self.entries.append(entry)
